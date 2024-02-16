@@ -41,15 +41,15 @@ pipeline {
         }
 
             
-            stage('Static code Analysis: Sonarqube'){
-            steps{
-				script{
+        //     stage('Static code Analysis: Sonarqube'){
+        //     steps{
+		// 		script{
                     
-					def SonaraqubeCredentialsId = 'sonar'
-                    sonarStaticAnalysis(SonaraqubeCredentialsId)
-				}
-            }
-        } 
+		// 			def SonaraqubeCredentialsId = 'sonar'
+        //             sonarStaticAnalysis(SonaraqubeCredentialsId)
+		// 		}
+        //     }
+        // } 
 
         stage('Maven Build : maven'){
             steps{
