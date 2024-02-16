@@ -30,6 +30,13 @@ pipeline {
 			}  
         }
         }
+
+        stage('Publish Cobertura Report') {
+            steps {
+                // Publish Cobertura report in Jenkins
+                cobertura autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'target/site/cobertura/coverage.xml', conditionalCoverageTargets: '', enableNewApi: true, failUnhealthy: false, failUnstable: false, healthyTarget: [methodCoverage: 70, classCoverage: 80, conditionalCoverage: 80], onlyStable: false, sourceEncoding: 'UTF-8', unstableTarget: [methodCoverage: 0, classCoverage: 0, conditionalCoverage: 0]
+            }
+        }
         
         stage('Integration Test maven'){
             steps{
