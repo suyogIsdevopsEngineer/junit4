@@ -23,14 +23,7 @@ pipeline {
             }
         }
 
-       stage('Unit test Maven'){
-        steps {
-			script{
-				mvnTest()
-			}  
-        }
-        }
-
+       
         stage('Integration Test maven'){
             steps{
 				script{
@@ -57,6 +50,14 @@ pipeline {
                     mvnBuild()
 				}
             }
+        }
+
+        stage('Unit test Maven'){
+        steps {
+			script{
+				mvnTest()
+			}  
+        }
         }
 
         stage('docker Image build'){
