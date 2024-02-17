@@ -61,7 +61,8 @@ pipeline {
         stage('Jacoco code coverage'){
             steps{
                 script{
-                    archiveArtifacts artifacts: '**target/surefire-reports/**/*.xml', fingerprint: true
+                    //archiveArtifacts artifacts: '**target/surefire-reports/**/index.html', fingerprint: true
+                    archiveArtifacts artifacts: '**/target/site/jacoco/index.html', fingerprint: true
                 }
             }
         }
