@@ -39,8 +39,7 @@ pipeline {
 				}
             }
         }
-
-            
+   
             stage('Static code Analysis: Sonarqube'){
             steps{
 				script{
@@ -54,9 +53,16 @@ pipeline {
         stage('Maven Build : maven'){
             steps{
 				script{
-                    
                     mvnBuild()
 				}
+            }
+        }
+
+        stage('Jacoco code coverage'){
+            steps{
+                script{
+                    archiveArtifacts artifacts: '**/target/target/classes/index.html', fingerprint: true
+                }
             }
         }
 
