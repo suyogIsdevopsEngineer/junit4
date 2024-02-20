@@ -123,7 +123,7 @@
     <artifactId>tools</artifactId>
     <version>1.7</version>
     <scope>system</scope>
-    <systemPath>/root/.m2/repository/com/sun/tools/1.8/tools-1.8.jar</systemPath>
+    <systemPath>${java.home}/../lib/tools.jar</systemPath>
 </dependency>
     </dependencies>
     
