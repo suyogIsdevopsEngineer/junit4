@@ -386,16 +386,17 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
-            </plugin>
-           <executions>
+                <executions>
 	            <execution>
 		            <goals>
 			            <goal>clean</goal>
 		            </goals>
 	            </execution>
-            </executions>
-
-            
+                </executions>
+                <formats>
+                    <format>html</format>
+                </formats>
+            </plugin>    
         </plugins>
     </build>
 
