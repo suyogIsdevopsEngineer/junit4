@@ -117,6 +117,13 @@
             <version>${hamcrestVersion}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.25.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     
 
@@ -400,7 +407,19 @@
 			</goals>
 		</execution>
 	</executions>
-            </plugin>    
+            </plugin>
+            <build>
+    <plugins>
+        <plugin>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.25.0</version>
+            <scope>test</scope>
+</dependency>
+        </plugin>
+    </plugins>
+</build>
+  
         </plugins>
     </build>
 

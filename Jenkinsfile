@@ -61,7 +61,7 @@ pipeline {
         stage('Jacoco code coverage'){
             steps{
                 script{
-                    //archiveArtifacts artifacts: '**target/surefire-reports/**/index.html', fingerprint: true
+                    mvn jacoco:report 
                     archiveArtifacts artifacts: '**/target/site/jacoco/index.html', fingerprint: true
                 }
             }
@@ -92,6 +92,18 @@ pipeline {
                     dockerPush("${params.ImageName}","${params.hubUser}","${params.ImageTag}")
 				}
             }
+        }
+    }
+    post {
+        always {
+            // Publish Allure report
+            allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'target/allure-results']]
+            ])
         }
     }
     }
