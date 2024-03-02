@@ -397,7 +397,6 @@
                <groupId>io.qameta.allure</groupId>
                <artifactId>allure-junit4</artifactId>
                <version>2.25.0</version>
-               <scope>test</scope>
          </plugin>
       </plugins>
    </build>
